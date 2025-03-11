@@ -172,7 +172,69 @@ section {
   height: 3px;
   background: var(--accent-color);
 }
+/* Funding Notice */
+.funding-notice {
+  text-align: center;
+  margin: 2rem 0;
+  padding: 1rem;
+  background: rgba(46, 125, 50, 0.1);
+  border-radius: 8px;
+  border: 1px solid var(--primary-color);
+}
 
+.funding-notice p {
+  font-weight: 500;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+/* Founder Section */
+.founder-section {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.founder-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--primary-color);
+}
+
+.founder-section .text-lead {
+  position: relative;
+
+  margin: 0;
+  
+}
+
+.founder-section .text-lead blockquote {
+  font-style: italic;
+  color: var(--dark-text);
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.founder-section .text-lead::before {
+  position: absolute;
+  left: 0;
+  top: -15px;
+  font-size: 3rem;
+  color: var(--secondary-color);
+}
+
+.founder-name {
+  font-weight: 600;
+  color: var(--primary-color);
+  margin: 0;
+}
 /* About Section */
 .about-section {
   display: flex;
@@ -216,18 +278,16 @@ section {
   color: var(--primary-color);
 }
 
+
 .vision-images {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   margin-top: 3rem;
-  justify-content: center;
-  flex-wrap: wrap;
 }
 
 .vision-image {
-  flex: 1;
-  min-width: 300px;
-  max-width: 400px;
+  width: 100%;
 }
 
 .vision-image img {
@@ -237,6 +297,7 @@ section {
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
+
 
 .vision-image p {
   margin-top: 1rem;
@@ -367,7 +428,7 @@ section {
 
 .form-group label {
   display: block;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
   font-weight: 500;
   color: var(--dark-text);
 }
@@ -474,6 +535,15 @@ footer {
   .hero {
     height: 80vh;
   }
+  .founder-section {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .founder-section .text-lead::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
   .products-grid {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
@@ -487,10 +557,11 @@ footer {
   
   /* Vision Responsive */
   .vision-images {
-    flex-direction: column;
+    grid-template-columns: 1fr;
   }
-  .vision-image {
-    max-width: 100%;
+  
+  .vision-image img {
+    height: 200px;
   }
   
   /* Contact Form Responsive */
